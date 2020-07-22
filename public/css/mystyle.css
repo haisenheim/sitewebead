@@ -1,0 +1,31 @@
+body{
+    background-color: lightgrey;
+}
+.vide{
+    height: 200px;
+    
+}
+.img-vide{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+.haut{
+    height: 150px;
+    background: dodgerblue;
+}
+.my-btn{
+    border: solid 1px;
+    border-radius: 5px;
+    padding: 4px;
+    color: black;
+}
+a.my-btn{
+    text-decoration: none;
+}
+.cadre{
+    border-radius: 100px;
+}
+#cadre{
+    margin: 10px auto;
+}
