@@ -26,6 +26,7 @@ class NoteController extends Controller
     }
 
     public function create(){
+        $note=Note::all();
         $type=Type::all();
         $filiere=Filiere::all();
         $semestre=Semestre::all();
@@ -35,7 +36,11 @@ class NoteController extends Controller
 
     public function edit($id){
         $note=Note::find($id);
-        return view('local/notes/edit')->with(compact('note'));
+        $type=Type::all();
+        $filiere=Filiere::all();
+        $semestre=Semestre::all();
+        $annee=Annee::all();
+        return view('local/notes/edit')->with(compact('note', 'type', 'filiere', 'semestre', 'annee'));
     }
 
     public function show($id){
@@ -81,6 +86,26 @@ class NoteController extends Controller
         $note->filiere_id=$request->filiere_id;
         $note->semestre_id=$request->semestre_id;
         $note->annee_id=$request->annee_id;
+         if($request->path){
+            $fichier = $request->path;
+            $ext_array= ['pdf'];
+            $ext = $fichier->getClientOriginalExtension();
+            //dd($ext);
+            if (in_array($ext,$ext_array)){
+                //dd('ext ok');
+                if(!file_exists(public_path().'/fichiers')){
+                    mkdir(public_path().'/fichiers');
+                }
+                if(!file_exists(public_path().'/fichiers/notes')){
+                    mkdir(public_path().'/fichiers/notes');
+                }
+                $name = date('dmYhis').'.'.$ext;
+                $path = 'fichiers/notes/'. $name;
+                $fichier->move(public_path('fichiers/notes'),$name);
+                $note->path = $path;
+
+            }
+        }
         $note->save();
         return redirect('local/acceuil-notes');
     }

@@ -58,6 +58,25 @@ class CategorieController extends Controller
     public function save(Request $request){
         $categorie=Categorie::find($request->id);
         $categorie->name=$request->$name;
+        if($request->image_uri){
+            $fichier = $request->image_uri;
+            $ext_array= ['png','jpg','jpeg','gif'];
+            $ext = $fichier->getClientOriginalExtension();
+            if (in_array($ext,$ext_array)){
+                if(!file_exists(public_path().'/images')){
+                    mkdir(public_path().'/images');
+                }
+                if(!file_exists(public_path().'/images/categories')){
+                    mkdir(public_path().'/images/categories');
+                }
+
+                $name = date('dmYhis').'.'.$ext;
+                $path = 'images/categories/'. $name;
+                $fichier->move(public_path('images/categories'),$name);
+                $categorie->image_uri = $path;
+
+            }
+        }
         $categorie->save();
         return redirect('/admin/acceuil-categories');
     }

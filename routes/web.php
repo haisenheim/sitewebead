@@ -58,7 +58,7 @@ Route::get('local/ajouter-note', 'Local\NoteController@create');
 Route::get('local/afficher-note/{id}', 'Local\NoteController@show');
 Route::get('local/modifier-note/{id}', 'Local\NoteController@edit');
 Route::post('local/store-note', 'Local\NoteController@store');
-Route::post('local/save', 'Local\NoteController@save');
+Route::post('local/save-note', 'Local\NoteController@save');
 Route::get('local/activer-categorie/{id}', 'Local\NoteController@activer');
 Route::get('local/desactiver-categorie/{id}', 'Local\NoteController@desactiver');
 //ETUDIANTS

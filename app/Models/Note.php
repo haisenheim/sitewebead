@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class Note extends Model
+
 {
     public function type(){
         return $this->belongsTo('App\Models\Type', 'type_id');

@@ -2,9 +2,10 @@
 
 
 @section('corps')
-    <h2>GESTION DES ARTICLES</h2>
+
+    <h2 class="text-center" >GESTION DES ARTICLES</h2>
     
-    <div class="table">
+    <div class="table card">
         <table>
             <tr>
                 <th></th>
