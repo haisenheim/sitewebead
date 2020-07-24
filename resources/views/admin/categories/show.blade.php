@@ -8,7 +8,7 @@
 <div class="container mt-4" >
     
     <div class="card col-3" >
-        <img class="card" src="{{asset($categorie->image_uri)}}" alt="">
+        <img class="card" src="{{asset($categorie->image_uri)}}" alt="" style="width: 100%" >
         <h5>ID: {{$categorie->id}}</h5>
         <h5>Nom: {{$categorie->name}}</h5>
     </div>

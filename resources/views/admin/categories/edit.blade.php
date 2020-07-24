@@ -6,15 +6,15 @@
 <div class="container mt-5 col-8">
     <div class="form-control" >
         <h3>Modifier: {{$categorie->name}}</h3>
-        <form enctype="multipart/form-data" action="/admin/save-categorie/" method="post">
+        <form enctype="multipart/form-data" action="/admin/save-categorie" method="post">
         @csrf
 
         <div>
-            <input type="hidden" placehoder="" name="id" >
+            <input type="hidden" placehoder="" name="id" value="{{$categorie->id}}">
         </div>
 
         <div>
-            <input type="text" placeholder="{{$categorie->name}}" name="name" >
+            <input type="text" value="{{$categorie->name}}" name="name" required>
         </div>
 
         <div>

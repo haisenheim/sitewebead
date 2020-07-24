@@ -9,7 +9,7 @@
         <form enctype="multipart/form-data" action="/local/store-note" method="post">
         @csrf
             <div>
-                <input type="hidden" placehoder="" name="id" >
+                <input type="hidden" placehoder="" name="id"value="id" >
             </div>
 
             <div>

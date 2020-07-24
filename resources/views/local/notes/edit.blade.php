@@ -8,7 +8,7 @@
     @csrf
 
     <div>
-        <input type="hidden" name="id" >
+        <input type="hidden" name="id" value="{{$note->id}}" >
     </div>
 
     <div>

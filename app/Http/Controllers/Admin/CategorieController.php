@@ -57,7 +57,8 @@ class CategorieController extends Controller
 
     public function save(Request $request){
         $categorie=Categorie::find($request->id);
-        $categorie->name=$request->$name;
+        $categorie->name=$request->name;
+        //dd($categorie);
         if($request->image_uri){
             $fichier = $request->image_uri;
             $ext_array= ['png','jpg','jpeg','gif'];

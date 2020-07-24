@@ -10,7 +10,7 @@
             <tr>
                 <th></th>
                 <th>Créer le</th>
-                <th>Ajouter le</th>
+                <th>Modifier le</th>
                 <th>Nom</th>
                 <th>Etat</th>
                 <th>Fonctions</th>

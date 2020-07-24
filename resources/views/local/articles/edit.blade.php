@@ -12,7 +12,7 @@
             @csrf
             
             <div>
-                <input type="hidden" name="id">
+                <input type="hidden" name="id" value="{{$article->id}}">
             </div>
 
             <div>

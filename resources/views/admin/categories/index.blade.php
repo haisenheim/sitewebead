@@ -10,7 +10,7 @@
         <tr>
             <th></th>
             <th>Créer le</th>
-            <th>Ajouter le</th>
+            <th>Modifier le</th>
             <th>Nom</th>
             <th>Fonctions</th>
         </tr>
@@ -37,7 +37,7 @@
 
 
 <div>
-    <a class="btn btn-primary btn-md" href="/admin/ajouter-categorie">Nouvelle catégorie</a>
+    <a class="btn btn-primary btn-md mb-3" href="/admin/ajouter-categorie">Nouvelle catégorie</a>
 </div>
 
 @endsection

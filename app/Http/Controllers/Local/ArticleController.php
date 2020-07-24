@@ -9,7 +9,6 @@ use App\Models\Article;
 
 class ArticleController extends Controller
 {
-    //
 
     public function index(){
         $article=Article::all();
@@ -45,9 +44,15 @@ class ArticleController extends Controller
                 if(!file_exists(public_path().'/images/articles')){
                     mkdir(public_path().'/images/articles');
                 }
-
                 $name = date('dmYhis').'.'.$ext;
                 $path = 'images/articles/'. $name;
+                if($article->image_uri){
+                    if(file_exists(public_path($article->image_uri))){
+                       unlink(public_path($article->image_uri));
+                    }   
+                }
+                
+                
                 $fichier->move(public_path('images/articles'),$name);
                 $article->image_uri = $path;
 
@@ -61,6 +66,31 @@ class ArticleController extends Controller
         $article=Article::find($request->id);
         $article->name=$request->name;
         $article->description=$request->description;
+        if($request->image_uri){
+            $fichier = $request->image_uri;
+            $ext_array= ['png','jpg','jpeg','gif'];
+            $ext = $fichier->getClientOriginalExtension();
+            if (in_array($ext,$ext_array)){
+                if(!file_exists(public_path().'/images')){
+                    mkdir(public_path().'/images');
+                }
+                if(!file_exists(public_path().'/images/articles')){
+                    mkdir(public_path().'/images/articles');
+                }
+                $name = date('dmYhis').'.'.$ext;
+                $path = 'images/articles/'. $name;
+                if($article->image_uri){
+                    if(file_exists(public_path($article->image_uri))){
+                       unlink(public_path($article->image_uri));
+                    }   
+                }
+                
+                
+                $fichier->move(public_path('images/articles'),$name);
+                $article->image_uri = $path;
+
+            }
+        }
         $article->save();
         return redirect('/local/acceuil-articles');
     }

@@ -10,7 +10,7 @@
         @csrf
 
         <div>
-            <input type="hidden" placehoder="" name="id" >
+            <input type="hidden" placehoder="" name="id" value"id" >
         </div>
 
         <div>

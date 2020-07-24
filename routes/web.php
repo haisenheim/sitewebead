@@ -20,6 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+
+
 //GESTION DES ARTICLES
 Route::get('local/acceuil-articles', 'Local\ArticleController@index');
 Route::get('local/ajouter-article', 'Local\ArticleController@create');
@@ -30,9 +32,6 @@ Route::post('local/save-article', 'Local\ArticleController@save');
 Route::get('local/activer-article/{id}', 'Local\ArticleController@activer');
 Route::get('local/desactiver-article/{id}', 'Local\ArticleController@desactiver');
 
-
-Route::get('articles', 'AllController@articles');
-//
 
 
 
@@ -47,9 +46,6 @@ Route::get('admin/activer-categorie/{id}', 'Admin\CategorieController@activer');
 Route::get('admin/desactiver-categorie/{id}', 'Admin\CategorieController@desactiver');
 
 
-Route::get('categories', 'AllController@categories');
-//
-
 
 
 //GESTION DES NOTES
@@ -61,16 +57,16 @@ Route::post('local/store-note', 'Local\NoteController@store');
 Route::post('local/save-note', 'Local\NoteController@save');
 Route::get('local/activer-categorie/{id}', 'Local\NoteController@activer');
 Route::get('local/desactiver-categorie/{id}', 'Local\NoteController@desactiver');
-//ETUDIANTS
+
+//Etudiants
 Route::get('etudiant/afficher-note', 'Etudiant\NoteController@index');
 
 //
 
 
-
-//GESTION DES FILIERES
-Route::get('local/acceuil-filieres', 'Local\FiliereController@index');
-Route::get('local/ajouter-filiere', 'Local\FiliereController@create');
-Route::get('local/modifier-filiere/{id}', 'Local\FiliereController@edit');
-Route::post('local/acceuil-filiere', 'Local\FiliereController@store');
-Route::post('local/save', 'Local\FiliereController@save');
+//ACCEUIL
+Route::get('categories', 'AllController@categories');
+Route::get('articles', 'AllController@articles');
+//formulaire de contact
+Route::get('formulaire', 'AllController@formulaire');
+Route::post('formulaire-store', 'AllController@formulairestore');
