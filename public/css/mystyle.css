@@ -1,15 +1,6 @@
 body{
     background-color: lightgrey;
 }
-.vide{
-    height: 200px;
-    
-}
-.img-vide{
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-}
 .haut{
     height: 150px;
     background: dodgerblue;
@@ -22,9 +13,6 @@ body{
 }
 a.my-btn{
     text-decoration: none;
-}
-.cadre{
-    border-radius: 100px;
 }
 #cadre{
     margin: 10px auto;

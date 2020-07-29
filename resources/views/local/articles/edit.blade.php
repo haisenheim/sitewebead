@@ -2,11 +2,8 @@
 
 
 @section('corps')
-
-
-
-<div class="form-group mt-4 col-6" >
-    <div class="form-control">
+<div class="container mt-5 col-6" >
+    <div class="form-group">
         <h2>Modifier {{$article->name}}</h2>
         <form enctype="multipart/form-data" action="/local/save-article" method="post" >
             @csrf
@@ -15,15 +12,15 @@
                 <input type="hidden" name="id" value="{{$article->id}}">
             </div>
 
-            <div>
-                <input type="text" value="{{$article->name}}" name="name">
+            <div class="form-group">
+                <input type="text" value="{{$article->name}}" name="name" class="form-control">
             </div>
 
-            <div>
-                <input type="text" value="{{$article->description}}" name="description">
+            <div class="form-group">
+                <input type="text" value="{{$article->description}}" name="description" class="form-control">
             </div>
 
-            <div>
+            <div class="form-group">
                 <input type="file" name="image_uri" id="file" required>
             </div>
 
@@ -31,14 +28,12 @@
                 <input type="hidden" value="user" name="user_id">
             </div>
 
-            <div>
+            <div class="form-group">
                 <input type="submit" class="btn btn-success" >
                 <a href="/local/acceuil-articles" class="btn btn-danger">Annuler</a>
             </div>
 
-         </form>
+        </form>
     </div>
 </div>
-
-
 @endsection

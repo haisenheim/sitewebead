@@ -3,7 +3,7 @@
 
 @section('corps')
 
-<h2 class="text-center" >GESTION DES CATEGORIES</h2>
+<h3 class="text-center">GESTION DES CATEGORIES</h3>
 
 <div class="table card">
     <table>
@@ -35,9 +35,7 @@
     </table>
 </div>
 
-
 <div>
     <a class="btn btn-primary btn-md mb-3" href="/admin/ajouter-categorie">Nouvelle catégorie</a>
 </div>
-
 @endsection

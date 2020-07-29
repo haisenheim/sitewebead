@@ -59,6 +59,7 @@ Route::get('local/activer-categorie/{id}', 'Local\NoteController@activer');
 Route::get('local/desactiver-categorie/{id}', 'Local\NoteController@desactiver');
 
 //Etudiants
+Route::get('etudiant/acceuil', 'Etudiant\EtudiantController@index');
 Route::get('etudiant/afficher-note', 'Etudiant\NoteController@index');
 
 //

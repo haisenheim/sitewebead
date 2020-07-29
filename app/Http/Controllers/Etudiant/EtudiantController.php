@@ -11,10 +11,14 @@ use App\Models\Filiere;
 use App\Models\Semestre;
 use App\Models\Annee;
 
-class NoteController extends Controller
+class EtudiantController extends Controller
 {
-    public function index($id){
+    public function index(){
+        return view('etudiant/index');
+    }
+
+    public function show($id){
         $note=Note::find($id);
-        return view('etudiant/notes/index')->with(compact('note'));
+        return view('etudiant/notes')->with(compact('note'));
     }
 }
